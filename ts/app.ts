@@ -1,7 +1,7 @@
-import { DefaultIcon } from "$ts/images/apps";
-import { QlorbRuntime } from "./runtime";
-import AppSvelte from "../App.svelte";
+import { QlorbIcon } from "$ts/images/apps";
 import { App } from "$types/app";
+import AppSvelte from "../App.svelte";
+import { QlorbRuntime } from "./runtime";
 
 export const QlorbApp: App = {
   metadata: {
@@ -9,7 +9,7 @@ export const QlorbApp: App = {
     description: "Click on flying orbs",
     author: "Izaak Kuipers",
     version: "1.0.0",
-    icon: DefaultIcon,
+    icon: QlorbIcon,
     appGroup: "entertainment"
   },
   runtime: QlorbRuntime,
