@@ -1,3 +1,31 @@
-window#appTemplate { /* Rename appTemplate to the ID of the app */
-  color: #f0f;
+@import url("https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap");
+@import url("./background.css");
+@import url("./osd.css");
+@import url("./game.css");
+
+#QlorbApp > div.titlebar {
+  border-bottom: none !important;
+  background-color: transparent;
+}
+
+#QlorbApp .game *,
+#QlorbApp .game *::before,
+#QlorbApp .game *::after {
+  border-radius: 5px;
+}
+
+#QlorbApp .body * {
+  font-family: "Kdam Thmor Pro", sans-serif !important;
+  box-sizing: initial;
+}
+
+#QlorbApp > .body {
+  padding: 0;
+  box-sizing: initial;
+  overflow: hidden;
+}
+
+#QlorbApp,
+#QlorbApp * {
+  overflow: hidden;
 }

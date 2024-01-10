@@ -1,33 +1,35 @@
 import { DefaultIcon } from "$ts/images/apps";
-import { Runtime } from "./runtime";
+import { QlorbRuntime } from "./runtime";
 import AppSvelte from "../App.svelte";
 import { App } from "$types/app";
 
-export const app: App = {
+export const QlorbApp: App = {
   metadata: {
-    name: "App Template",
-    description: "This is an app template",
-    author: "The ArcOS Team",
-    version: "0.0.0",
-    icon: DefaultIcon
+    name: "Qlorb",
+    description: "Click on flying orbs",
+    author: "Izaak Kuipers",
+    version: "1.0.0",
+    icon: DefaultIcon,
+    appGroup: "entertainment"
   },
-  runtime: Runtime,
+  runtime: QlorbRuntime,
   content: AppSvelte,
-  id: "appTemplate",
-  size: { w: 0, h: 0 },
-  minSize: { w: 0, h: 0 },
-  maxSize: { w: 0, h: 0 },
-  pos: { x: 0, y: 0 },
+  id: "QlorbApp",
+  size: { w: 890, h: NaN },
+  minSize: { w: 890, h: 600 },
+  maxSize: { w: 1200, h: NaN },
+  pos: { x: 100, y: 100 },
   state: {
     minimized: false,
-    maximized: false,
+    maximized: true,
     headless: false,
     fullscreen: false,
-    resizable: false
+    resizable: true
   },
   controls: {
-    minimize: false,
-    maximize: false,
-    close: false
-  }
+    minimize: true,
+    maximize: true,
+    close: true,
+  },
+  singleInstance: true
 }
