@@ -1,10 +1,10 @@
 <script lang="ts">
-  import { onMount } from "svelte";
-  import "./css/main.css";
   import { App } from "$types/app";
+  import { onMount } from "svelte";
   import Intro from "./Components/Intro.svelte";
   import Main from "./Components/Main.svelte";
   import Start from "./Components/Start.svelte";
+  import "./css/main.css";
   import { QlorbRuntime } from "./ts/runtime";
 
   export let runtime: QlorbRuntime;

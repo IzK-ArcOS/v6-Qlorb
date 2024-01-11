@@ -1,10 +1,10 @@
 <script lang="ts">
-  import { onMount } from "svelte";
-  import { QlorbRuntime } from "../ts/runtime";
-  import { App } from "$types/app";
-  import { UserDataStore } from "$ts/stores/user";
   import Page from "$state/Desktop/Components/ProcessRenderer/Window/Page.svelte";
   import { Logo } from "$ts/branding";
+  import { UserDataStore } from "$ts/stores/user";
+  import { App } from "$types/app";
+  import { onMount } from "svelte";
+  import { QlorbRuntime } from "../ts/runtime";
 
   export let runtime: QlorbRuntime;
   export let app: App;
