@@ -25,7 +25,7 @@
   }
 
   function exit() {
-    ProcessStack.kill(runtime.pid);
+    ProcessStack.kill(runtime.pid, true);
   }
 </script>
 
