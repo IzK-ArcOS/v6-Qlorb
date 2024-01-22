@@ -1,6 +1,5 @@
 <script lang="ts">
   import { QlorbRuntime } from "$apps/Qlorb/ts/runtime";
-  import { onMount } from "svelte";
 
   export let runtime: QlorbRuntime;
 
