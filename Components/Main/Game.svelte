@@ -5,21 +5,23 @@
   import BoxComponent from "./Game/Box.svelte";
   export let runtime: QlorbRuntime;
 
+  const { Clicks, Score, Boxes } = runtime;
+
   let offset = 0;
   let boxes: Box[];
 
-  runtime.Clicks.subscribe((v) => {
+  Clicks.subscribe((v) => {
     const val = (v + 1) * (runtime.BOX_SIZE + runtime.BOX_SIZE / 2);
 
     offset = val / 2 - runtime.BOX_SIZE / 2;
     offset = -offset;
   });
 
-  runtime.Score.subscribe((v) => {
+  Score.subscribe((v) => {
     if (v < 0) runtime.Score.set(0);
   });
 
-  runtime.Boxes.subscribe((v) => (boxes = v));
+  Boxes.subscribe((v) => (boxes = v));
 
   onMount(() => {
     runtime.spawnBox(null, false, true);

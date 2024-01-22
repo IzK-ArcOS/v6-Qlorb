@@ -7,11 +7,14 @@
   import OnScreenDisplay from "./Main/OnScreenDisplay.svelte";
   export let runtime: QlorbRuntime;
 
+  const { Score } = runtime;
+
   let level = 0;
+
+  Score.subscribe((v) => (level = Math.floor(v / 100)));
 
   onMount(() => {
     runtime.flushStores();
-    runtime.Score.subscribe((v) => (level = Math.floor(v / 100)));
   });
 </script>
 

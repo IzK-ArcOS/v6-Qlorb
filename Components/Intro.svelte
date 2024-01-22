@@ -3,31 +3,30 @@
   import { Logo } from "$ts/branding";
   import { UserDataStore } from "$ts/stores/user";
   import { App } from "$types/app";
-  import { onMount } from "svelte";
   import { QlorbRuntime } from "../ts/runtime";
 
   export let runtime: QlorbRuntime;
   export let app: App;
 
-  onMount(() => {
-    runtime.CurrentPage.subscribe((v) => {
-      if (v != "intro") return;
+  const { CurrentPage } = runtime;
 
-      if (
-        $UserDataStore.appdata.QlorbApp &&
-        $UserDataStore.appdata.QlorbApp.introed
-      )
-        return runtime.switchPage("start");
+  CurrentPage.subscribe((v) => {
+    if (v != "intro") return;
 
-      setTimeout(() => {
-        if (!$UserDataStore.appdata.QlorbApp)
-          $UserDataStore.appdata.QlorbApp = {};
+    if (
+      $UserDataStore.appdata.QlorbApp &&
+      $UserDataStore.appdata.QlorbApp.introed
+    )
+      return runtime.switchPage("start");
 
-        $UserDataStore.appdata.QlorbApp.introed = true;
+    setTimeout(() => {
+      if (!$UserDataStore.appdata.QlorbApp)
+        $UserDataStore.appdata.QlorbApp = {};
 
-        runtime.switchPage("start");
-      }, 17000);
-    });
+      $UserDataStore.appdata.QlorbApp.introed = true;
+
+      runtime.switchPage("start");
+    }, 17000);
   });
 </script>
 

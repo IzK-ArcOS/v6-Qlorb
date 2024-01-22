@@ -9,18 +9,16 @@
   let clicks = "";
   let scoreN = 0;
 
-  onMount(() => {
-    runtime.OldScore.subscribe(
-      (v) => (oldScore = v.toString().padStart(6, "0"))
-    );
+  const { OldScore, Score, Clicks } = runtime;
 
-    runtime.Score.subscribe((v) => {
-      scoreN = v;
-      score = v.toString().padStart(6, "0");
-    });
+  OldScore.subscribe((v) => (oldScore = v.toString().padStart(6, "0")));
 
-    runtime.Clicks.subscribe((v) => (clicks = v.toString().padStart(3, "0")));
+  Score.subscribe((v) => {
+    scoreN = v;
+    score = v.toString().padStart(6, "0");
   });
+
+  Clicks.subscribe((v) => (clicks = v.toString().padStart(3, "0")));
 </script>
 
 <div class="score">

@@ -6,6 +6,8 @@
   export let runtime: QlorbRuntime;
   export let box: Box;
 
+  const { Clicks } = runtime;
+
   let button: HTMLButtonElement;
   let disabled = false;
   let offset = -65;
@@ -15,9 +17,7 @@
     setTimeout(() => (offset = box.yoffset), 100);
   });
 
-  runtime.Clicks.subscribe(
-    (v) => v == 0 && setTimeout(() => (disabled = false))
-  );
+  Clicks.subscribe((v) => v == 0 && setTimeout(() => (disabled = false)));
 
   function score() {
     runtime.ScorePoints(box, button);
