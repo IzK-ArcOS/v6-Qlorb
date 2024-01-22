@@ -13,16 +13,10 @@
   CurrentPage.subscribe((v) => {
     if (v != "intro") return;
 
-    if (
-      $UserDataStore.appdata.QlorbApp &&
-      $UserDataStore.appdata.QlorbApp.introed
-    )
+    if ($UserDataStore.appdata.QlorbApp.introed)
       return runtime.switchPage("start");
 
     setTimeout(() => {
-      if (!$UserDataStore.appdata.QlorbApp)
-        $UserDataStore.appdata.QlorbApp = {};
-
       $UserDataStore.appdata.QlorbApp.introed = true;
 
       runtime.switchPage("start");
