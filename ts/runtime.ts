@@ -22,26 +22,18 @@ export class QlorbRuntime extends AppRuntime {
     super(appData, appMutator, process);
 
     setInterval(() => {
-      if (
-        this.Boxes.get().length - this.Clicks.get() < 21 &&
-        this.CurrentPage.get() == "game"
-      )
+      if (this.Boxes.get().length - this.Clicks.get() < 21 && this.CurrentPage.get() == "game")
         this.spawnBox();
     }, 300);
   }
 
-  public spawnBox(
-    props?: Nullable<Box>,
-    useOffset?: boolean,
-    forcePositive = false
-  ): Box {
+  public spawnBox(props?: Nullable<Box>, useOffset?: boolean, forcePositive = false): Box {
     this.Log(
       `Spawning box (useOffset = ${useOffset}, forcePositive = ${forcePositive})`,
       "spawnBox"
     );
 
-    const boxProps: Box =
-      props || this.createRandomBox(useOffset, forcePositive);
+    const boxProps: Box = props || this.createRandomBox(useOffset, forcePositive);
 
     this.Boxes.update((v) => {
       v.push(boxProps);
@@ -59,9 +51,7 @@ export class QlorbRuntime extends AppRuntime {
       `Creating random box (useOffset = ${useOffset}, forcePositive = ${forcePositive})`,
       "createRandomBox"
     );
-    const values = !forcePositive
-      ? this.BOX_VALUES
-      : this.BOX_VALUES.filter((v) => v > 0);
+    const values = !forcePositive ? this.BOX_VALUES : this.BOX_VALUES.filter((v) => v > 0);
     const modifier = values[this.random(values.length)];
     const offset = this.random(this.BOX_SIZE * 2);
 

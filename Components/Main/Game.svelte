@@ -35,10 +35,7 @@
 </script>
 
 <div class="game fullscreen">
-  <div
-    class="boxes"
-    style="--boxsize: {runtime.BOX_SIZE}px; --boxes-offset: {offset}px;"
-  >
+  <div class="boxes" style="--boxsize: {runtime.BOX_SIZE}px; --boxes-offset: {offset}px;">
     <button class="misclick-trigger" on:click={fail} on:contextmenu={fail} />
 
     {#if boxes}

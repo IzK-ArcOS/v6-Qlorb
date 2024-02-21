@@ -10,7 +10,7 @@ export const QlorbApp: App = {
     author: "Izaak Kuipers",
     version: "1.0.0",
     icon: QlorbIcon,
-    appGroup: "entertainment"
+    appGroup: "entertainment",
   },
   runtime: QlorbRuntime,
   content: AppSvelte,
@@ -24,12 +24,12 @@ export const QlorbApp: App = {
     maximized: true,
     headless: false,
     fullscreen: false,
-    resizable: true
+    resizable: true,
   },
   controls: {
     minimize: true,
     maximize: true,
     close: true,
   },
-  singleInstance: true
-}
+  singleInstance: true,
+};

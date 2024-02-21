@@ -20,7 +20,7 @@
         buttons: [{ caption: "Understood", action() {}, suggested: true }],
       },
       runtime.pid,
-      true
+      true,
     );
   }
 
