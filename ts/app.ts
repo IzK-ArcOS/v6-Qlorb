@@ -1,3 +1,4 @@
+import { SafeMode } from "$state/Desktop/ts/store";
 import { QlorbIcon } from "$ts/images/apps";
 import { App } from "$types/app";
 import AppSvelte from "../App.svelte";
@@ -32,4 +33,5 @@ export const QlorbApp: App = {
     close: true,
   },
   singleInstance: true,
+  loadCondition: () => !SafeMode.get(),
 };
