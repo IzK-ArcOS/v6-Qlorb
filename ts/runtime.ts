@@ -12,7 +12,6 @@ export class QlorbRuntime extends AppRuntime {
   public readonly BoxesOffset = Store<number>(0);
   public readonly Clicks = Store<number>(0);
   public readonly Score = Store<number>(0);
-  public readonly OldScore = Store<number>(0);
   public readonly OldClicks = Store<number>(0);
   public readonly BOX_SIZE = 30;
   public readonly BOX_VALUES = [1, -1, -1, 5, 2, -5, -4, 1, -2];
@@ -102,24 +101,15 @@ export class QlorbRuntime extends AppRuntime {
   public clickReset(): void {
     this.Log(`Resetting click variables`, "clickReset");
 
-    this.saveOldScore();
     this.Clicks.set(1); // Set it to 1 first to force the subscribers to update
     this.Clicks.set(0);
     this.levelDown();
-  }
-
-  private saveOldScore(): void {
-    this.Log(`Saving old score`, "saveOldScore");
-
-    this.OldScore.set(this.Score.get());
-    this.OldClicks.set(this.Clicks.get());
   }
 
   public flushStores(): void {
     this.Log(`Flushing all stores to their default values`, "flushStores");
 
     this.Score.set(0);
-    this.OldScore.set(0);
     this.Clicks.set(0);
     this.OldClicks.set(0);
     this.Boxes.set([]);

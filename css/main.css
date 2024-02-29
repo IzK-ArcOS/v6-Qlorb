@@ -14,7 +14,7 @@
   border-radius: 5px;
 }
 
-#QlorbApp .body * {
+#QlorbApp > .body * {
   font-family: "Kdam Thmor Pro", sans-serif !important;
   box-sizing: initial;
 }
