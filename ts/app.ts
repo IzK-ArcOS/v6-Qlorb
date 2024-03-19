@@ -1,5 +1,6 @@
 import { SafeMode } from "$state/Desktop/ts/store";
 import { QlorbIcon } from "$ts/images/apps";
+import { HelpArticles } from "$ts/stores/articles";
 import { App } from "$types/app";
 import AppSvelte from "../App.svelte";
 import { QlorbRuntime } from "./runtime";
@@ -34,4 +35,5 @@ export const QlorbApp: App = {
   },
   singleInstance: true,
   loadCondition: () => !SafeMode.get(),
+  helpArticle: HelpArticles.qlorb,
 };

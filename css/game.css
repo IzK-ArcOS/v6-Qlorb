@@ -38,6 +38,7 @@
   transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
   height: 400px;
   box-sizing: border-box;
+  overflow: visible;
 }
 
 #QlorbApp div.game button.misclick-trigger {
